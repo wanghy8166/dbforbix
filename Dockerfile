@@ -23,5 +23,5 @@ ADD jtds-1.3.1.jar /opt/dbforbix/lib/
 RUN chmod -R a+x /opt/dbforbix/dbforbix.sh && \
     sed -i "s#USER=dbforbix#USER=root#g" /opt/dbforbix/dbforbix.sh 
 # 容器启动命令
-ENTRYPOINT /opt/dbforbix/dbforbix.sh start && sleep 5 && tail -F /opt/dbforbix/logs/dbforbix.log
+ENTRYPOINT /opt/dbforbix/dbforbix.sh start && sleep 5 && tail -f /opt/dbforbix/logs/dbforbix.log
 # entrypoint tail -F /var/log/message 
