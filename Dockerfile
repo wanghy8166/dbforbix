@@ -16,6 +16,7 @@ ADD dbforbix-2.2-beta-linux64.tar.gz /opt/dbforbix/
 ADD jre-7u80-linux-x64.tar.gz /opt/dbforbix/
 ADD jsvc /usr/bin/jsvc
 ADD jtds-1.3.1.jar /opt/dbforbix/lib/
+ADD mysql-connector-java-5.1.41-bin.jar /opt/dbforbix/lib/
 # ADD jre-6u45-linux-x64.bin /opt/orabbix/ 
 # RUN sh jre-6u45-linux-x64.bin && rm -rf jre-6u45-linux-x64.bin 
 # ADD config.props /opt/orabbix/ 
