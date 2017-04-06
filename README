@@ -1,0 +1,12 @@
+# 构建镜像
+cd /opt/dbforbix
+docker build -t dbforbix:wxf-20170406 /opt/dbforbix
+
+# 运行容器
+docker run --name dbforbix -v /opt/dbforbix/conf/config.properties:/opt/dbforbix/conf/config.properties -v /opt/dbforbix/items/mssql.xml:/opt/dbforbix/items/mssql.xml -d  --restart=unless-stopped dbforbix:wxf-20170406
+
+# 重启容器
+/usr/bin/docker exec -it dbforbix /opt/dbforbix/dbforbix.sh restart
+
+# 查看日志
+docker logs -f --tail 10 dbforbix
