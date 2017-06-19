@@ -20,7 +20,8 @@
 		<multiquery time="120" items="aborted_clients|aborted_connects|binlog_cache_disk_use|binlog_cache_use|created_tmp_disk_tables|created_tmp_files|created_tmp_tables|delayed_errors|delayed_insert_threads|delayed_writes|flush_commands|open_files|open_streams|open_tables|opened_tables|not_flushed_delayed_rows|prepared_stmt_count|select_full_join|select_full_range_join|select_range|select_range_check|select_scan|slow_queries|uptime|uptime_since_flush_status" type="list">SHOW GLOBAL STATUS</multiquery>
 		<multiquery time="60" items="bytes_sent|bytes_received|connections|queries|questions|com_commit|com_delete|com_delete_multi|com_execute_sql|com_help|com_insert|com_insert_select|com_lock_tables|com_optimize|com_replace|com_replace_select|com_rollback|com_select|com_update|com_update_multi" type="list">SHOW GLOBAL STATUS</multiquery>
 
-<query time="60" item="CTaskPending_fail">select ifnull(sum(failureCount),0) from hdpos.CTaskPending where failureCount != 0</query>
+<query time="60" item="CTaskPending_fail">select ifnull(sum(failureCount),0) from hdpos.CTaskPending where groupid != 'notify'</query>
+<query time="60" item="CTaskPending_submitTime">select ifnull(TIMESTAMPDIFF(MINUTE,min(submitTime),now()),0) from hdpos.CTaskPending where groupid != 'notify'</query>
 
 	</server>
 </parms>

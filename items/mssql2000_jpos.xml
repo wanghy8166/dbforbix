@@ -1,0 +1,7 @@
+<!DOCTYPE parms SYSTEM "param.dtd">
+<parms type="mssql" prefix="mssql.">
+	<server>
+		<query time="120" item="JPOSWARNINGLIST">select count(1) from JPOSWARNINGLIST(nolock)</query>
+		
+	</server>
+</parms>

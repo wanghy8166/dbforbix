@@ -91,6 +91,7 @@ from stkout st (nolock)
 where not exists (select 1 from wso w (nolock)  where w.billnumber =st.pdsbillnumber)
   and st.stat = 1
   and st.fildate > getdate() - 2 </query>
+<query time="60" item="pspdsbillplantargetdtl"> select count(1) from PSPDSBILLPLANTARGETDTL(nolock) where proflag in(0,2) </query>
 <query time="60" item="start_minute"> select datediff(minute,crdate,getdate()) as start_minute from master..sysdatabases where name='tempdb' </query>
 	
 	</server>
